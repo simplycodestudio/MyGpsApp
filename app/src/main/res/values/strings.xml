@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">MyGpsApp</string>
+    <string name="google_maps_api_key">AIzaSyCBKXmAuxrVM3C8AuBnsl-wPVvJAT28_VM</string>
+</resources>
