@@ -1,4 +1,16 @@
 <resources>
     <string name="app_name">MyGpsApp</string>
     <string name="google_maps_api_key">AIzaSyCBKXmAuxrVM3C8AuBnsl-wPVvJAT28_VM</string>
+    <string name="Import_complete">Import zakończony. Przesuń palec do dołu aby zaktualizować listę</string>
+    <string name="Backup_complete">Backup zakończony</string>
+    <string name="usun_wszystkie_pozycje">Usuń wszystkie pozycje</string>
+    <string name="potwierdz">tak</string>
+    <string name="zaneguj">nie</string>
+    <string name="usun_pozycje">usuń pozycję</string>
+    <string name="Cancel">Anuluj</string>
+    <string name="backup_name">Nazwa Kopii :</string>
+    <string name="zapisz">Zapisz</string>
+    <string name="Restore">Import :</string>
+    <string name="todo_pojazd">TODO</string>
+    <string name="jestes_pewien">jesteś pewien?</string>
 </resources>

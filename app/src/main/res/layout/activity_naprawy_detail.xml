@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_gradient"
+
+
+    android:scrollbarStyle="insideOverlay"
+    tools:context="com.example.mygpsapp.ServiceBookClasses.NaprawyDetailActivity">
+
+    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="64dp"
+            android:layout_height="32dp"
+
+            android:layout_marginTop="2dp"
+            android:contentDescription="@string/todo_pojazd"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/laweta_bialy" />
+
+        <TextView
+            android:id="@+id/textViewPojazd"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            android:gravity="center"
+            android:textColor="#f11712"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView5" />
+
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewPojazd"
+            app:srcCompat="@drawable/kalendarz_bialy" />
+
+        <TextView
+            android:id="@+id/textViewPeriod"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:textColor="#f11712"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView6" />
+
+        <ImageView
+            android:id="@+id/imageView7"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewPeriod"
+            app:srcCompat="@drawable/przebieg_bialy" />
+
+        <TextView
+            android:id="@+id/textViewPrzebieg"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="2dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:gravity="right"
+            android:textColor="#f11712"
+            app:layout_constraintEnd_toStartOf="@+id/textViewUnit"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView7" />
+
+        <TextView
+            android:id="@+id/textViewUnit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="8dp"
+            android:gravity="left"
+            android:textColor="#f11712"
+            app:layout_constraintBottom_toBottomOf="@+id/textViewPrzebieg"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textViewPrzebieg"
+            app:layout_constraintTop_toBottomOf="@+id/imageView7" />
+
+        <ImageView
+            android:id="@+id/imageView8"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewPrzebieg"
+            app:srcCompat="@drawable/kwota_bialy" />
+
+        <TextView
+            android:id="@+id/textViewKwota"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="2dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:gravity="right"
+            android:textColor="#f11712"
+            app:layout_constraintEnd_toStartOf="@+id/textViewVal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView8" />
+
+        <TextView
+            android:id="@+id/textViewVal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="8dp"
+            android:gravity="left"
+            android:textColor="#f11712"
+            app:layout_constraintBottom_toBottomOf="@+id/textViewKwota"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textViewKwota"
+            app:layout_constraintTop_toBottomOf="@+id/imageView8" />
+
+        <ImageView
+            android:id="@+id/imageView9"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewKwota"
+            app:srcCompat="@drawable/garaz_bialy" />
+
+        <TextView
+            android:id="@+id/textViewWarsztat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:textColor="#f11712"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView9" />
+
+        <ImageView
+            android:id="@+id/imageView10"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewWarsztat"
+            app:srcCompat="@drawable/pen_bialy" />
+
+        <TextView
+            android:id="@+id/textViewOpis"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:textColor="#f11712"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView10" />
+
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab_usun"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:elevation="6dp"
+            android:src="@drawable/ic_delete_black_24dp"
+            android:visibility="invisible"
+            app:backgroundTint="@color/fab1_color"
+            app:fabSize="mini"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fab_edytuj"
+            app:pressedTranslationZ="12dp" />
+
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab_edytuj"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:elevation="6dp"
+            android:src="@drawable/edit"
+            android:visibility="invisible"
+            app:backgroundTint="#222222"
+            app:fabSize="mini"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fab_plus"
+            app:pressedTranslationZ="12dp" />
+
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab_cofnij"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:elevation="6dp"
+            android:src="@drawable/ic_arrow_back_black_24dp"
+            android:visibility="invisible"
+            app:backgroundTint="#434343"
+            app:fabSize="mini"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fab_usun"
+            app:pressedTranslationZ="12dp" />
+
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab_plus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:elevation="6dp"
+            android:src="@drawable/ic_more"
+            app:backgroundTint="#550000"
+            app:fabSize="mini"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:pressedTranslationZ="12dp" />
+
+    </android.support.constraint.ConstraintLayout>
+
+
+</ScrollView>

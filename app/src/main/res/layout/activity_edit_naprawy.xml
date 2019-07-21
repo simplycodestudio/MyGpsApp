@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/background_gradient"
+    tools:context="com.example.mygpsapp.ServiceBookClasses.EditNaprawyActivity">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <AutoCompleteTextView
+                android:id="@+id/editTextPojazd"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Pojazd..."
+                android:inputType="textPersonName"
+                android:singleLine="false"
+                android:textColor="#f11712"
+                android:textColorHint="#AAAAAA"
+                app:layout_constraintEnd_toStartOf="@+id/Arrow_down_Pojazd"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/buttonBack" />
+
+
+            <EditText
+                android:id="@+id/editTextPeriod"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="8dp"
+                android:ems="10"
+                android:hint="Data..."
+                android:textColor="#f11712"
+                android:inputType="date"
+                android:textColorHint="#AAAAAA"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editTextPojazd" />
+
+
+            <EditText
+                android:id="@+id/editTextPrzebieg"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:ems="10"
+                android:hint="Przebieg..."
+                android:textColor="#f11712"
+                android:inputType="number"
+                android:textColorHint="#AAAAAA"
+                app:layout_constraintEnd_toStartOf="@+id/unit_autocomplete"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editTextPeriod" />
+
+
+            <EditText
+                android:id="@+id/editTextKwota"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:ems="10"
+                android:hint="Kwota..."
+                android:textColor="#f11712"
+                android:inputType="textPersonName|number"
+                android:textColorHint="#AAAAAA"
+                app:layout_constraintEnd_toStartOf="@+id/Nominal_autocomplete"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editTextPrzebieg" />
+
+
+            <EditText
+                android:id="@+id/editTextWarsztat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:ems="10"
+                android:hint="Warsztat..."
+                android:textColor="#f11712"
+                android:inputType="textPersonName"
+                android:textColorHint="#AAAAAA"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editTextKwota" />
+
+
+            <EditText
+                android:id="@+id/editTextOpis"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:ems="10"
+                android:hint="Opis..."
+                android:inputType="textMultiLine"
+                android:textColor="#f11712"
+                android:textColorHint="#AAAAAA"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editTextWarsztat" />
+
+            <Button
+                android:id="@+id/buttonBack"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:background="@drawable/ic_arrow_back_black_24dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/buttonSave"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="8dp"
+                android:layout_weight="1"
+                android:background="@mipmap/zapisz"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/buttonBack"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <AutoCompleteTextView
+                android:id="@+id/Nominal_autocomplete"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:hint="val."
+                android:textColor="#f11712"
+                android:textColorHint="#AAAAAA"
+                app:layout_constraintBottom_toBottomOf="@+id/editTextKwota"
+                app:layout_constraintEnd_toStartOf="@+id/Arrow_down_val"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/editTextKwota"
+                app:layout_constraintTop_toTopOf="@+id/editTextKwota" />
+
+            <AutoCompleteTextView
+                android:id="@+id/unit_autocomplete"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:hint="unit."
+                android:textColor="#f11712"
+                android:textColorHint="#AAAAAA"
+                app:layout_constraintBottom_toBottomOf="@+id/editTextPrzebieg"
+                app:layout_constraintEnd_toStartOf="@+id/arrow_down_Przebieg"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/editTextPrzebieg"
+                app:layout_constraintTop_toTopOf="@+id/editTextPrzebieg" />
+
+            <ImageView
+                android:id="@+id/Arrow_down_val"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintBottom_toTopOf="@+id/editTextWarsztat"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editTextPrzebieg"
+                app:srcCompat="@android:drawable/arrow_down_float" />
+
+            <ImageView
+                android:id="@+id/Arrow_down_Pojazd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintBottom_toBottomOf="@+id/editTextPojazd"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/editTextPojazd"
+                app:layout_constraintTop_toTopOf="@+id/editTextPojazd"
+                app:srcCompat="@android:drawable/arrow_down_float" />
+
+            <ImageView
+                android:id="@+id/arrow_down_Przebieg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintBottom_toBottomOf="@+id/editTextPrzebieg"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/editTextPrzebieg"
+                app:srcCompat="@android:drawable/arrow_down_float" />
+
+
+        </android.support.constraint.ConstraintLayout>
+
+    </ScrollView>
+
+
+</LinearLayout>

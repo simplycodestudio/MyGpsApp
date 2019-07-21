@@ -17,5 +17,31 @@
         <!--<item name="android:windowFullscreen">true</item>-->
 
     </style>
+    <style name="MyDialogTheme" parent="Theme.AppCompat.Light.Dialog.Alert">
+
+        <item name="colorAccent">#000000</item>
+        <item name="android:background">@color/alert_usun</item>
+        <item name="android:textColorPrimary">#FFFFFF</item>
+        <item name="android:windowTitleStyle">@style/WindowTitleStyle</item>
+    </style>
+    <style name="WindowTitleStyle"
+        parent="TextAppearance.AppCompat.Title">
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+    <style name="MyDialogImport" parent="Theme.AppCompat.Light.Dialog.Alert">
+
+        <item name="colorAccent">#000000</item>
+        <item name="android:background">#0033FF</item>
+        <item name="android:textColorPrimary">#FFFFFF</item>
+        <item name="android:windowTitleStyle">@style/WindowTitleStyle</item>
+    </style>
+
+    <style name="MyDialogExport" parent="Theme.AppCompat.Light.Dialog.Alert">
+
+        <item name="colorAccent">#000000</item>
+        <item name="android:background">#006600</item>
+        <item name="android:textColorPrimary">#FFFFFF</item>
+        <item name="android:windowTitleStyle">@style/WindowTitleStyle</item>
+    </style>
 
 </resources>

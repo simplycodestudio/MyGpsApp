@@ -20,4 +20,10 @@
     <color name="dark_red">#992600</color>
 
     <color name="dark_blue">#003366</color>
+
+    <color name="alert_usun">#dd1818</color>
+    <!--Dziennik napraw-->
+    <color name="fab1_color">#CC0000</color>
+    <color name="fab2_color">#006600</color>
+    <color name="fab3_color">#0066FF</color>
 </resources>
