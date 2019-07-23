@@ -9,6 +9,8 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 
+import com.blogspot.atifsoftwares.animatoolib.Animatoo;
+
 
 public class Splash extends AppCompatActivity {
 
@@ -24,7 +26,7 @@ public class Splash extends AppCompatActivity {
 
                 Intent goMain = new Intent(Splash.this, MainMenu.class);
                 Splash.this.startActivity(goMain);
-                // Animatoo.animateFade(Splash.this);
+                Animatoo.animateFade(Splash.this);
                 Splash.this.finish();
             }
         },SPLASH_TIME_OUT);

@@ -8,6 +8,7 @@
 
     <!--https://material.google.com/style/color.html#color-color-palette -->
 
+    <color name="userColor">#6F6F6F</color>
 
     <color name="gray_300">#E0E0E0</color>
 
