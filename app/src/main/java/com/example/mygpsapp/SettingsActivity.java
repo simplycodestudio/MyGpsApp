@@ -1,5 +1,6 @@
 package com.example.mygpsapp;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
@@ -38,8 +39,8 @@ public class SettingsActivity extends AppCompatActivity {
         final SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
         String name = sharedPreferences.getString("nameKey","No name");
         usernameTv.setText(name);
-        final SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
-        String ip = prefs.getString("IpKey", "0");
+        //final SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
+        String ip = sharedPreferences.getString("IpKey", "0");
         ipTv.setText(ip);
 
         editUsernameBtn.setOnClickListener(new View.OnClickListener() {
@@ -51,6 +52,13 @@ public class SettingsActivity extends AppCompatActivity {
 
 
 
+    }
+
+
+    @Override
+    public void onBackPressed() {
+        Intent backIntent =  new Intent(SettingsActivity.this, MainMenu.class);
+        startActivity(backIntent);
     }
 
     public void editUsernameField() {
@@ -66,6 +74,10 @@ public class SettingsActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String editedUserName = editTextUserName.getText().toString();
+                SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putString("nameKey", editedUserName);
+                editor.apply();
                 usernameTv.setText(editedUserName);
                 editTextUserName.setVisibility(View.GONE);
                 acceptUserName.setVisibility(View.GONE);
