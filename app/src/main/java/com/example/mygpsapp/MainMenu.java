@@ -102,14 +102,11 @@ public class MainMenu extends AppCompatActivity implements StartDialog.StartDial
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putString("nameKey", username);
-        editor.apply();
-        editor.commit();
+
         textViewUsername.setText(username + "'s");
-        editor.putString("IpKey", "0");
+        editor.putString("IpKey", password);
         editor.apply();
         editor.commit();
-        //Toast.makeText(MainMenu.this, "works" ,Toast.LENGTH_LONG).show();
-       // textViewPassword.setText(password);
 
     }
 
