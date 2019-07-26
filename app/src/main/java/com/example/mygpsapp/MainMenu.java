@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -19,6 +20,8 @@ public class MainMenu extends AppCompatActivity implements StartDialog.StartDial
     public Button carFinderBtn;
     public Button serviceBookBtn;
     public TextView textViewUsername;
+    public ImageView lockedDoorsImageview;
+    public Button goToSettingsBtn;
     Typeface myfont;
 
     SharedPreferences sharedPreferences;
@@ -57,7 +60,10 @@ public class MainMenu extends AppCompatActivity implements StartDialog.StartDial
         serviceBookBtn = findViewById(R.id.serviceBookBtn);
         textViewUsername = findViewById(R.id.tvUserName);
         myfont = Typeface.createFromAsset(this.getAssets(), "fonts/MYRIADPRO-SEMIBOLDIT.OTF");
+        lockedDoorsImageview = findViewById(R.id.lockedDoorsImageView);
+        lockedDoorsImageview.setImageResource(R.drawable.door_closed);
         textViewUsername.setTypeface(myfont);
+        goToSettingsBtn = findViewById(R.id.settingsBtn);
     }
 
     public void listenery() {
@@ -78,6 +84,12 @@ public class MainMenu extends AppCompatActivity implements StartDialog.StartDial
         });
         String name = sharedPreferences.getString("nameKey","No name");
         textViewUsername.setText(name + "'s");
+        goToSettingsBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goToSettings();
+            }
+        });
     }
 
     public void openDialog(){
@@ -91,10 +103,19 @@ public class MainMenu extends AppCompatActivity implements StartDialog.StartDial
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putString("nameKey", username);
         editor.apply();
+        editor.commit();
         textViewUsername.setText(username + "'s");
+        editor.putString("IpKey", "0");
+        editor.apply();
+        editor.commit();
         //Toast.makeText(MainMenu.this, "works" ,Toast.LENGTH_LONG).show();
        // textViewPassword.setText(password);
 
+    }
+
+    public void goToSettings() {
+        Intent goToSettingsIntent = new Intent(MainMenu.this, SettingsActivity.class);
+        startActivity(goToSettingsIntent);
     }
 
 
