@@ -62,7 +62,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         Latitude = lat.toString();
         Longitude = lon.toString();
 
-        
+
 
         getLat();
         if (mMap != null) {//Check here map is not initialized
