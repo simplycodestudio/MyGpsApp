@@ -13,11 +13,23 @@ public class OutputModel {
     @SerializedName("velocity")
     private Double velocity;
 
+    @SerializedName("isDoorLocked")
+    private int isDoorLocked;
 
-    public OutputModel(Double latitude, Double longitude, Double velocity) {
+    @SerializedName("distance_to_oil_change")
+    private int distance_to_oil_change;
+
+    @SerializedName("voltage")
+    private int voltage;
+
+
+    public OutputModel(Double latitude, Double longitude, Double velocity, int isDoorLocked, int distance_to_oil_change, int voltage) {
         this.latitude = latitude;
         this.longitude = longitude;
         this.velocity = velocity;
+        this.isDoorLocked = isDoorLocked;
+        this.distance_to_oil_change = distance_to_oil_change;
+        this.voltage = voltage;
     }
 
     public Double getLatitude() {
@@ -42,5 +54,29 @@ public class OutputModel {
 
     public void setVelocity(Double velocity) {
         this.velocity = velocity;
+    }
+
+    public int getIsDoorLocked() {
+        return isDoorLocked;
+    }
+
+    public void setIsDoorLocked(int isDoorLocked) {
+        this.isDoorLocked = isDoorLocked;
+    }
+
+    public int getDistance_to_oil_change() {
+        return distance_to_oil_change;
+    }
+
+    public void setDistance_to_oil_change(int distance_to_oil_change) {
+        this.distance_to_oil_change = distance_to_oil_change;
+    }
+
+    public int getVoltage() {
+        return voltage;
+    }
+
+    public void setVoltage(int voltage) {
+        this.voltage = voltage;
     }
 }
