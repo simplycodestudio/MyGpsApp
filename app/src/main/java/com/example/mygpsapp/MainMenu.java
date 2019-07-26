@@ -41,7 +41,7 @@ public class MainMenu extends AppCompatActivity implements StartDialog.StartDial
         }
         else
         {
-            Toast.makeText(MainMenu.this,"Welcome user", Toast.LENGTH_LONG).show();
+            //Toast.makeText(MainMenu.this,"Welcome user", Toast.LENGTH_LONG).show();
 
         }
         inity();
