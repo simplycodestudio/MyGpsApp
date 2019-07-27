@@ -32,6 +32,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private GoogleMap mMap;
     SharedPreferences sharedPreferences;
     private Handler mHandler = new Handler();
+    private Handler refreshMarkerHandler = new Handler();
     private static Context mContext;
 
 
@@ -101,17 +102,13 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
-        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
-        String sharedLat = sharedPreferences.getString("latitude","0");
-        String sharedLon = sharedPreferences.getString("longitude","0");
+        setMarkerRunnable.run();
 
 
-        Double doubleLat = Double.valueOf(sharedLat);
-        Double doubleLon = Double.valueOf(sharedLon);
-        carLatLng = new LatLng(doubleLat, doubleLon);
 //
-        mMap.addMarker(new MarkerOptions().position(carLatLng).title("Integra Location"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(carLatLng, 15.5f));
+
+
+
 
        // String latitude = sharedPreferences.getString("latitude","0");
        // String longitude = sharedPreferences.getString("longitude","0");
@@ -125,5 +122,31 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         //    onCarChangeLocation(lat, lon);
       //  }
+    }
+    public Runnable setMarkerRunnable = new Runnable() {
+        @Override
+        public void run() {
+            getLocationSharedPreferences();
+            mHandler.postDelayed(this, 1000);
+        }
+    };
+    public void getLocationSharedPreferences()
+    {
+        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
+        String sharedLat = sharedPreferences.getString("latitude","0");
+        String sharedLon = sharedPreferences.getString("longitude","0");
+
+
+        Double doubleLat = Double.valueOf(sharedLat);
+        Double doubleLon = Double.valueOf(sharedLon);
+
+        setMarker(doubleLat, doubleLon);
+
+    }
+
+    public void setMarker(Double lat, Double lon) {
+        carLatLng = new LatLng(lat, lon);
+        mMap.addMarker(new MarkerOptions().position(carLatLng).title("Integra Location"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(carLatLng, 15.5f));
     }
 }
