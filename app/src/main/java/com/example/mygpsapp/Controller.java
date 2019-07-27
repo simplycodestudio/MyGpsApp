@@ -20,10 +20,10 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class Controller {
 
-    public static final String BASE_URL = "http://192.168.0.14:80/";
+    public static final String BASE_URL = "http://172.20.10.2:80/";
     private static Retrofit retrofit = null;
     private Handler mHandler = new Handler();
-
+    MapsActivity mapsActivity = new MapsActivity();
     public Double lat;
     public Double lon;
 
@@ -54,8 +54,10 @@ public class Controller {
                // mMap.clear();
                 lat = response.body().getLatitude();
                 lon = response.body().getLongitude();
-                MapsActivity mapsActivity = new MapsActivity();
-                mapsActivity.onCarChangeLocation(lat, lon);
+
+
+               mapsActivity.onCarChangeLocation(lat, lon);
+                //mapsActivity.onCarChangeLocation(lat, lon);
                 //Log.i("latitudeinfo: ", lat.toString());
 
 

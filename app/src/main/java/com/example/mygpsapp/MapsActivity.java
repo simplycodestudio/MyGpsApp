@@ -110,8 +110,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         Double doubleLon = Double.valueOf(sharedLon);
         carLatLng = new LatLng(doubleLat, doubleLon);
 //
+
         mMap.addMarker(new MarkerOptions().position(carLatLng).title("Integra Location"));
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(carLatLng, 15.5f));
+
 
        // String latitude = sharedPreferences.getString("latitude","0");
        // String longitude = sharedPreferences.getString("longitude","0");
