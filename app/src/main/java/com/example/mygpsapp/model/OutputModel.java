@@ -20,10 +20,10 @@ public class OutputModel {
     private int distance_to_oil_change;
 
     @SerializedName("voltage")
-    private int voltage;
+    private Double voltage;
 
 
-    public OutputModel(Double latitude, Double longitude, Double velocity, int isDoorLocked, int distance_to_oil_change, int voltage) {
+    public OutputModel(Double latitude, Double longitude, Double velocity, int isDoorLocked, int distance_to_oil_change, Double voltage) {
         this.latitude = latitude;
         this.longitude = longitude;
         this.velocity = velocity;
@@ -72,11 +72,11 @@ public class OutputModel {
         this.distance_to_oil_change = distance_to_oil_change;
     }
 
-    public int getVoltage() {
+    public Double getVoltage() {
         return voltage;
     }
 
-    public void setVoltage(int voltage) {
+    public void setVoltage(Double voltage) {
         this.voltage = voltage;
     }
 }
