@@ -1,7 +1,10 @@
 package com.example.mygpsapp;
 
 import android.Manifest;
+import android.content.BroadcastReceiver;
 import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.location.Geocoder;
@@ -43,6 +46,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         setContentView(R.layout.activity_maps);
         mContext = getApplicationContext();
         getDataRunnable.run();
+
+
+
 
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
@@ -91,6 +97,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     }
 
 
+
+
     public Runnable getDataRunnable = new Runnable() {
         @Override
         public void run() {
@@ -107,14 +115,14 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
 
 
-        refreshMarkerHandler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                getLocationSharedPreferences();
-
-                refreshMarkerHandler.postDelayed(this, 2000);
-            }
-        }, 1500);
+//        refreshMarkerHandler.postDelayed(new Runnable() {
+//            @Override
+//            public void run() {
+//                getLocationSharedPreferences();
+//
+//                refreshMarkerHandler.postDelayed(this, 2000);
+//            }
+//        }, 1500);
 
 
 //

@@ -1,5 +1,8 @@
 package com.example.mygpsapp;
 
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -18,9 +21,9 @@ import retrofit2.Callback;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class Controller {
+public class Controller  {
 
-    public static final String BASE_URL = "http://172.20.10.2:80/";
+    public static final String BASE_URL = "http://172.20.10.2/";
     private static Retrofit retrofit = null;
     private Handler mHandler = new Handler();
     private MapsActivity mapsActivity = new MapsActivity();
@@ -46,7 +49,7 @@ public class Controller {
             public void onResponse(Call<OutputModel> call, retrofit2.Response<OutputModel> response) {
 
                 if (!response.isSuccessful()) {
-                    // onFailTV.setText("Code: " + response.code());
+                     Log.d("!sucesfully","Code: " + response.code());
                     return;
                 }
 
@@ -67,12 +70,15 @@ public class Controller {
 
             @Override
             public void onFailure(Call<OutputModel> call, Throwable t) {
-              //  Toast.makeText(MapsActivity.this,"Unable to connect with server", Toast.LENGTH_LONG).show();
+              Log.d("errorMsg", t.getMessage());
+
             }
         });
 
 
     }
+
+
 
 //    public Runnable getDataRunnable = new Runnable() {
 //        @Override
