@@ -82,7 +82,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         } else {
 
             carLatLng = new LatLng(lat, lon);
-            //Toast.makeText(MapsActivity.this,"something happens", Toast.LENGTH_LONG).show();
+
         }
 
     }
@@ -115,33 +115,15 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
 
 
-//        refreshMarkerHandler.postDelayed(new Runnable() {
-//            @Override
-//            public void run() {
-//                getLocationSharedPreferences();
-//
-//                refreshMarkerHandler.postDelayed(this, 2000);
-//            }
-//        }, 1500);
+        refreshMarkerHandler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                getLocationSharedPreferences();
 
+                refreshMarkerHandler.postDelayed(this, 2000);
+            }
+        }, 1500);
 
-//
-
-
-
-
-       // String latitude = sharedPreferences.getString("latitude","0");
-       // String longitude = sharedPreferences.getString("longitude","0");
-
-        //double lat = Double.parseDouble(latitude);
-        //double lon = Double.parseDouble(longitude);
-
-
-        //carLatLng = new LatLng(lat, lon);
-       // if (carLatLng != null) { //recall for setup pin
-
-        //    onCarChangeLocation(lat, lon);
-      //  }
     }
 
     public void getLocationSharedPreferences()
