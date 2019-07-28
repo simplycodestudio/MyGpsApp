@@ -32,7 +32,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private GoogleMap mMap;
     SharedPreferences sharedPreferences;
     private Handler mHandler = new Handler();
-    private Handler refreshMarkerHandler = new Handler();
+
+    public Handler refreshMarkerHandler = new Handler();
     private static Context mContext;
 
 
@@ -64,10 +65,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         Longitude = lon.toString();
 
 
-
+        Log.d("wywolano", "wywolano");
         getLat();
         if (mMap != null) {//Check here map is not initialized
-            Toast.makeText(MapsActivity.this,"something happens", Toast.LENGTH_LONG).show();
+
             carLatLng = new LatLng(lat, lon);
 
             mMap.addMarker(new MarkerOptions().position(carLatLng).title("Integra Location"));
@@ -95,14 +96,25 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         public void run() {
             Controller controller = new Controller();
             controller.getData();
-            mHandler.postDelayed(this, 1000);
+            mHandler.postDelayed(this, 2000);
         }
     };
+
+
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
-        setMarkerRunnable.run();
+
+
+        refreshMarkerHandler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                getLocationSharedPreferences();
+
+                refreshMarkerHandler.postDelayed(this, 2000);
+            }
+        }, 1500);
 
 
 //
@@ -123,15 +135,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         //    onCarChangeLocation(lat, lon);
       //  }
     }
-    public Runnable setMarkerRunnable = new Runnable() {
-        @Override
-        public void run() {
-            getLocationSharedPreferences();
-            mHandler.postDelayed(this, 1000);
-        }
-    };
+
     public void getLocationSharedPreferences()
     {
+        Log.d("wywolanozgetloc", "wywolano");
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
         String sharedLat = sharedPreferences.getString("latitude","0");
         String sharedLon = sharedPreferences.getString("longitude","0");
@@ -145,6 +152,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     }
 
     public void setMarker(Double lat, Double lon) {
+
+
         carLatLng = new LatLng(lat, lon);
         mMap.addMarker(new MarkerOptions().position(carLatLng).title("Integra Location"));
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(carLatLng, 15.5f));
