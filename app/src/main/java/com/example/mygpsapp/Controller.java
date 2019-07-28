@@ -27,11 +27,14 @@ public class Controller  {
     private static Retrofit retrofit = null;
     private Handler mHandler = new Handler();
     private MapsActivity mapsActivity = new MapsActivity();
+    private MainMenu mainMenu = new MainMenu();
     public Double lat;
     public Double lon;
+    public int doorState;
+    public Double voltage;
 
 
-    public void getData() {
+    public void getData(final int which) {
 
         if (retrofit == null) {
             retrofit = new Retrofit.Builder()
@@ -57,9 +60,19 @@ public class Controller  {
                // mMap.clear();
                 lat = response.body().getLatitude();
                 lon = response.body().getLongitude();
+                doorState = response.body().getIsDoorLocked();
+                voltage = response.body().getVoltage();
+                if (which ==0)
+                {
+                    mainMenu.getAllMainData(doorState, voltage);
+                }
 
 
-               mapsActivity.onCarChangeLocation(lat, lon);
+                if (which ==1)
+                {
+                    mapsActivity.onCarChangeLocation(lat, lon);
+                }
+
                 //mapsActivity.onCarChangeLocation(lat, lon);
                 //Log.i("latitudeinfo: ", lat.toString());
 

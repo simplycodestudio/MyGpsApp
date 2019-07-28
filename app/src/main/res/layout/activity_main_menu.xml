@@ -73,4 +73,26 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         />
+
+    <ImageView
+        android:id="@+id/accumulatorImageview"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toStartOf="@+id/lockedDoorsImageView"
+        app:layout_constraintStart_toEndOf="@+id/tvUserName"
+        app:layout_constraintTop_toTopOf="@+id/lockedDoorsImageView"
+        app:srcCompat="@drawable/accumulator" />
+
+    <TextView
+        android:id="@+id/accumulatorTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="@+id/accumulatorImageview"
+        app:layout_constraintStart_toStartOf="@+id/accumulatorImageview"
+        app:layout_constraintTop_toBottomOf="@+id/accumulatorImageview" />
 </android.support.constraint.ConstraintLayout>

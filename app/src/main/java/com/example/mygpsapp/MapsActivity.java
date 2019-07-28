@@ -72,7 +72,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
 
         Log.d("wywolano", "wywolano");
-        getLat();
+        putToShared();
         if (mMap != null) {//Check here map is not initialized
 
             carLatLng = new LatLng(lat, lon);
@@ -87,7 +87,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     }
 
-    private void getLat() {
+    private void putToShared() {
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(MapsActivity.getAppContext());
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putString("latitude", Latitude);
@@ -103,7 +103,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         @Override
         public void run() {
             Controller controller = new Controller();
-            controller.getData();
+            controller.getData(1);
             mHandler.postDelayed(this, 2000);
         }
     };
