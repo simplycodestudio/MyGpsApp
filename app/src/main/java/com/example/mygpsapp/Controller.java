@@ -23,7 +23,7 @@ public class Controller {
     public static final String BASE_URL = "http://172.20.10.2:80/";
     private static Retrofit retrofit = null;
     private Handler mHandler = new Handler();
-    MapsActivity mapsActivity = new MapsActivity();
+    private MapsActivity mapsActivity = new MapsActivity();
     public Double lat;
     public Double lon;
 
