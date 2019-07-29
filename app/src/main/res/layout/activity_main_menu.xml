@@ -9,26 +9,51 @@
 
     <Button
         android:id="@+id/carFinderBtn"
-        android:layout_width="128dp"
-        android:layout_height="128dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="376dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="76dp"
+        android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
-        android:background="@drawable/transparent_button"
+        android:background="@drawable/pinezka"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.042" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintVertical_bias="0.23000002" />
+
+    <Button
+        android:id="@+id/carOilBtn"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/car_oil"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/carFinderBtn"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/carFinderBtn"
+        app:layout_constraintTop_toBottomOf="@+id/CarfinderTv"
+        app:layout_constraintVertical_bias="0.087" />
+
+    <Button
+        android:id="@+id/carGasGtn"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:background="@drawable/paliwo"
+        app:layout_constraintBottom_toBottomOf="@+id/carOilBtn"
+        app:layout_constraintEnd_toEndOf="@+id/serviceBookBtn"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/serviceBookBtn"
+        app:layout_constraintTop_toTopOf="@+id/carOilBtn" />
 
     <Button
         android:id="@+id/serviceBookBtn"
-        android:layout_width="128dp"
-        android:layout_height="128dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
-        android:background="@drawable/transparent_button"
+        android:background="@drawable/book"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.607"
+        app:layout_constraintHorizontal_bias="0.51"
         app:layout_constraintStart_toEndOf="@+id/carFinderBtn"
         app:layout_constraintTop_toTopOf="@+id/carFinderBtn" />
 
@@ -37,28 +62,24 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="215dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="110dp"
         android:text="NoNamed"
-        android:textColor="@color/userColor"
+        android:textColor="#757575"
         android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/carFinderBtn"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.028"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.061"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/lockedDoorsImageView"
-        android:layout_width="50dp"
-        android:layout_height="80dp"
-        android:layout_marginStart="8dp"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.896"
-        app:layout_constraintStart_toEndOf="@+id/tvUserName"
-        app:layout_constraintTop_toBottomOf="@+id/tvUserName"
-        />
+        app:layout_constraintEnd_toEndOf="@+id/accumulatorImageview"
+        app:layout_constraintStart_toStartOf="@+id/accumulatorImageview"
+        app:layout_constraintTop_toBottomOf="@+id/accumulatorTv" />
 
     <Button
         android:id="@+id/settingsBtn"
@@ -76,23 +97,92 @@
 
     <ImageView
         android:id="@+id/accumulatorImageview"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        app:layout_constraintEnd_toStartOf="@+id/lockedDoorsImageView"
-        app:layout_constraintStart_toEndOf="@+id/tvUserName"
-        app:layout_constraintTop_toTopOf="@+id/lockedDoorsImageView"
-        app:srcCompat="@drawable/accumulator" />
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/settingsBtn"
+        app:layout_constraintStart_toStartOf="@+id/settingsBtn"
+        app:layout_constraintTop_toBottomOf="@+id/settingsBtn"
+        app:srcCompat="@drawable/akumulator" />
 
     <TextView
         android:id="@+id/accumulatorTv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="TextView"
+        android:layout_marginTop="4dp"
         app:layout_constraintEnd_toEndOf="@+id/accumulatorImageview"
         app:layout_constraintStart_toStartOf="@+id/accumulatorImageview"
-        app:layout_constraintTop_toBottomOf="@+id/accumulatorImageview" />
+        app:layout_constraintTop_toBottomOf="@+id/accumulatorImageview"
+        android:textColor="#FFFFFF"
+        />
+
+    <TextView
+        android:id="@+id/doorLockTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="@+id/lockedDoorsImageView"
+        app:layout_constraintStart_toStartOf="@+id/lockedDoorsImageView"
+        app:layout_constraintTop_toBottomOf="@+id/lockedDoorsImageView" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="177dp"
+        android:layout_height="62dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toStartOf="@+id/accumulatorImageview"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvUserName"
+        app:srcCompat="@drawable/badge" />
+
+    <TextView
+        android:id="@+id/CarfinderTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Car Finder"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/carFinderBtn"
+        app:layout_constraintStart_toStartOf="@+id/carFinderBtn"
+        app:layout_constraintTop_toBottomOf="@+id/carFinderBtn" />
+
+    <TextView
+        android:id="@+id/OilTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/carOilBtn"
+        app:layout_constraintStart_toStartOf="@+id/carOilBtn"
+        app:layout_constraintTop_toBottomOf="@+id/carOilBtn" />
+
+    <TextView
+        android:id="@+id/GasolineTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/carGasGtn"
+        app:layout_constraintStart_toStartOf="@+id/carGasGtn"
+        app:layout_constraintTop_toBottomOf="@+id/carGasGtn" />
+
+    <TextView
+        android:id="@+id/servicebookTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Service Book"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/serviceBookBtn"
+        app:layout_constraintStart_toStartOf="@+id/serviceBookBtn"
+        app:layout_constraintTop_toBottomOf="@+id/serviceBookBtn" />
+
 </android.support.constraint.ConstraintLayout>

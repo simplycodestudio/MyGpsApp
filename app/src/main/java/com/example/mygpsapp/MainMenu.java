@@ -17,6 +17,7 @@ import android.widget.Toast;
 
 import com.example.mygpsapp.ServiceBookClasses.Dziennik_napraw;
 import com.example.mygpsapp.dialog.StartDialog;
+import com.jgabrielfreitas.core.BlurImageView;
 
 public class MainMenu extends AppCompatActivity implements StartDialog.StartDialogListener {
 
@@ -26,7 +27,13 @@ public class MainMenu extends AppCompatActivity implements StartDialog.StartDial
     public ImageView lockedDoorsImageview;
     public Button goToSettingsBtn;
     public TextView voltageField;
-    Typeface myfont;
+    public TextView carfindertv;
+    public TextView servicebookTv;
+    public TextView oilTextView;
+    public TextView doorLockTextView;
+    public TextView gasolineTv;
+    Typeface userNameFont;
+    Typeface myriad;
     private static Context mContext;
     SharedPreferences sharedPreferences;
     Boolean firstTime;
@@ -69,12 +76,27 @@ public class MainMenu extends AppCompatActivity implements StartDialog.StartDial
         carFinderBtn = findViewById(R.id.carFinderBtn);
         serviceBookBtn = findViewById(R.id.serviceBookBtn);
         textViewUsername = findViewById(R.id.tvUserName);
-        myfont = Typeface.createFromAsset(this.getAssets(), "fonts/MYRIADPRO-SEMIBOLDIT.OTF");
+        carfindertv = findViewById(R.id.CarfinderTv);
+        servicebookTv = findViewById(R.id.servicebookTv);
+        oilTextView = findViewById(R.id.OilTv);
+        doorLockTextView = findViewById(R.id.doorLockTv);
+        gasolineTv = findViewById(R.id.GasolineTv);
+        userNameFont = Typeface.createFromAsset(this.getAssets(), "fonts/MYRIADPRO-BOLD.OTF");
+        myriad = Typeface.createFromAsset(this.getAssets(),"fonts/Myriad_Pro_Condensed.ttf");
+
 
        // lockedDoorsImageview.setImageResource(R.drawable.door_closed);
-        textViewUsername.setTypeface(myfont);
+        textViewUsername.setTypeface(userNameFont);
         goToSettingsBtn = findViewById(R.id.settingsBtn);
         voltageField = findViewById(R.id.accumulatorTv);
+        voltageField.setTypeface(myriad);
+        carfindertv.setTypeface(myriad);
+        servicebookTv.setTypeface(myriad);
+        oilTextView.setTypeface(myriad);
+        gasolineTv.setTypeface(myriad);
+        doorLockTextView.setTypeface(myriad);
+        textViewUsername.setTypeface(userNameFont);
+        gasolineTv.setText("23%");
     }
 
     public void listenery() {
@@ -124,10 +146,12 @@ public class MainMenu extends AppCompatActivity implements StartDialog.StartDial
 
     String DoorState;
     String Voltage;
-    public void getAllMainData(int doorStatus, Double voltage)
+    String OilChange;
+    public void getAllMainData(int doorStatus, Double voltage, int Oilchange)
     {
         DoorState = String.valueOf(doorStatus);
         Voltage = String.valueOf(voltage);
+        OilChange = String.valueOf(Oilchange);
         putToShared();
 
     }
@@ -137,6 +161,7 @@ public class MainMenu extends AppCompatActivity implements StartDialog.StartDial
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putString("isDoorLocked", DoorState);
         editor.putString("voltage", Voltage);
+        editor.putString("distanceToOilChange", OilChange);
         editor.apply();
 
     }
@@ -161,11 +186,13 @@ public class MainMenu extends AppCompatActivity implements StartDialog.StartDial
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
         String sharedlockstate = sharedPreferences.getString("isDoorLocked", "2");
         String sharedvoltage = sharedPreferences.getString("voltage", "0");
-
+        String sharedOilChange = sharedPreferences.getString("distanceToOilChange", "10000");
         int Lockstate = Integer.parseInt(sharedlockstate);
         Double VoltageState = Double.valueOf(sharedvoltage);
+        int OilChange = Integer.parseInt(sharedOilChange);
         DoorLockInfo(Lockstate);
         setVoltage(VoltageState);
+        setDistanceToOilChange(OilChange);
 
     }
 
@@ -176,10 +203,12 @@ public class MainMenu extends AppCompatActivity implements StartDialog.StartDial
         if (status == 0)
         {
             lockedDoorsImageview.setImageResource(R.drawable.door_closed);
+            doorLockTextView.setText("Door Locked");
         }
         else if (status == 1)
         {
             lockedDoorsImageview.setImageResource(R.drawable.door_unlocked);
+            doorLockTextView.setText("Door Unlocked");
         }
         else if(status == 2)
         {
@@ -193,6 +222,11 @@ public class MainMenu extends AppCompatActivity implements StartDialog.StartDial
 
         voltageField.setText(voltage.toString() + " V");
 
+    }
+
+    public void setDistanceToOilChange(int distance)
+    {
+        oilTextView.setText(String.valueOf(distance) + " km");
     }
 
 

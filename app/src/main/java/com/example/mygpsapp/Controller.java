@@ -32,6 +32,7 @@ public class Controller  {
     public Double lon;
     public int doorState;
     public Double voltage;
+    public int OilChange;
 
 
     public void getData(final int which) {
@@ -62,9 +63,10 @@ public class Controller  {
                 lon = response.body().getLongitude();
                 doorState = response.body().getIsDoorLocked();
                 voltage = response.body().getVoltage();
+                OilChange = response.body().getDistance_to_oil_change();
                 if (which ==0)
                 {
-                    mainMenu.getAllMainData(doorState, voltage);
+                    mainMenu.getAllMainData(doorState, voltage, OilChange);
                 }
 
 
