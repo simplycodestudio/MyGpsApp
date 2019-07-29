@@ -121,9 +121,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             public void run() {
                 getLocationSharedPreferences();
 
-                refreshMarkerHandler.postDelayed(this, 15000);
+                refreshMarkerHandler.postDelayed(this, 1500);
             }
-        }, 15000);
+        }, 1500);
 
     }
 

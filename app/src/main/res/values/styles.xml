@@ -28,6 +28,14 @@
         parent="TextAppearance.AppCompat.Title">
         <item name="android:textColor">#FFFFFF</item>
     </style>
+    <style name="StartDialog" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="colorAccent">#B92A2A</item>
+        <item name="android:background">#2E2E2E</item>
+        <item name="android:textColorPrimary">#0C0B0B</item>
+        <item name="android:fontFamily">@font/myriad</item>
+
+        <item name="android:windowTitleStyle">@style/WindowTitleStyle</item>
+    </style>
     <style name="MyDialogImport" parent="Theme.AppCompat.Light.Dialog.Alert">
 
         <item name="colorAccent">#000000</item>
