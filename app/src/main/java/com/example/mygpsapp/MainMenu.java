@@ -95,7 +95,7 @@ public class MainMenu extends AppCompatActivity implements StartDialog.StartDial
         oilTextView.setTypeface(myriad);
         gasolineTv.setTypeface(myriad);
         doorLockTextView.setTypeface(myriad);
-        textViewUsername.setTypeface(userNameFont);
+        textViewUsername.setTypeface(myriad);
         gasolineTv.setText("23%");
     }
 
@@ -213,12 +213,12 @@ public class MainMenu extends AppCompatActivity implements StartDialog.StartDial
         if (status == 0)
         {
             lockedDoorsImageview.setImageResource(R.drawable.door_closed);
-            doorLockTextView.setText("Door Locked");
+            doorLockTextView.setText("Doors Locked");
         }
         else if (status == 1)
         {
             lockedDoorsImageview.setImageResource(R.drawable.door_unlocked);
-            doorLockTextView.setText("Door Unlocked");
+            doorLockTextView.setText("Doors Unlocked");
         }
         else if(status == 2)
         {

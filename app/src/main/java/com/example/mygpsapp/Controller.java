@@ -23,7 +23,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class Controller  {
 
-    public static final String BASE_URL = "http://172.20.10.2/";
+    public static final String BASE_URL = "http://192.168.0.14/";
     private static Retrofit retrofit = null;
     private Handler mHandler = new Handler();
     private MapsActivity mapsActivity = new MapsActivity();
