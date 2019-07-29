@@ -23,6 +23,7 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
@@ -145,7 +146,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
 
         carLatLng = new LatLng(lat, lon);
-        mMap.addMarker(new MarkerOptions().position(carLatLng).title("Integra Location"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(carLatLng, 15.5f));
+        mMap.addMarker(new MarkerOptions().position(carLatLng).icon(BitmapDescriptorFactory.fromResource(R.drawable.itr_map_ico)).title("Integra Location"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(carLatLng, 14.2f));
+
     }
 }

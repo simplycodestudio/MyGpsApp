@@ -39,7 +39,7 @@ public class MainMenu extends AppCompatActivity implements StartDialog.StartDial
     Boolean firstTime;
 
     private Handler mHandler = new Handler();
-
+    private Handler refreshLayoutHandler = new Handler();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -123,7 +123,15 @@ public class MainMenu extends AppCompatActivity implements StartDialog.StartDial
                 goToSettings();
             }
         });
-        getAllSharedPreferences();
+        refreshLayoutHandler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                getAllSharedPreferences();
+
+                refreshLayoutHandler.postDelayed(this, 2000);
+            }
+        }, 1500);
+        ;
     }
 
     public void openDialog(){
@@ -179,6 +187,8 @@ public class MainMenu extends AppCompatActivity implements StartDialog.StartDial
             mHandler.postDelayed(this, 2000);
         }
     };
+
+
 
     public void getAllSharedPreferences()
     {
