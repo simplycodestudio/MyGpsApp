@@ -22,14 +22,26 @@ public class OutputModel {
     @SerializedName("voltage")
     private Double voltage;
 
+    @SerializedName("fuel_level")
+    private int fuel_level;
 
-    public OutputModel(Double latitude, Double longitude, Double velocity, int isDoorLocked, int distance_to_oil_change, Double voltage) {
+
+    public OutputModel(Double latitude, Double longitude, Double velocity, int isDoorLocked, int distance_to_oil_change, Double voltage, int fuel_level) {
         this.latitude = latitude;
         this.longitude = longitude;
         this.velocity = velocity;
         this.isDoorLocked = isDoorLocked;
         this.distance_to_oil_change = distance_to_oil_change;
         this.voltage = voltage;
+        this.fuel_level = fuel_level;
+    }
+
+    public int getFuel_level() {
+        return fuel_level;
+    }
+
+    public void setFuel_level(int fuel_level) {
+        this.fuel_level = fuel_level;
     }
 
     public Double getLatitude() {

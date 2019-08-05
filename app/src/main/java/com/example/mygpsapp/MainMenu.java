@@ -155,11 +155,13 @@ public class MainMenu extends AppCompatActivity implements StartDialog.StartDial
     String DoorState;
     String Voltage;
     String OilChange;
-    public void getAllMainData(int doorStatus, Double voltage, int Oilchange)
+    String FuelLevel;
+    public void getAllMainData(int doorStatus, Double voltage, int Oilchange, int fuelLevel)
     {
         DoorState = String.valueOf(doorStatus);
         Voltage = String.valueOf(voltage);
         OilChange = String.valueOf(Oilchange);
+        FuelLevel = String.valueOf(fuelLevel);
         putToShared();
 
     }

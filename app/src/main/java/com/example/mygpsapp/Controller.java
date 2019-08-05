@@ -23,7 +23,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class Controller  {
 
-    public static final String BASE_URL = "http://192.168.0.14/";
+    public static final String BASE_URL = "http://192.168.0.18/";
     private static Retrofit retrofit = null;
     private Handler mHandler = new Handler();
     private MapsActivity mapsActivity = new MapsActivity();
@@ -33,6 +33,7 @@ public class Controller  {
     public int doorState;
     public Double voltage;
     public int OilChange;
+    public int fuelLevel;
 
 
     public void getData(final int which) {
@@ -64,9 +65,10 @@ public class Controller  {
                 doorState = response.body().getIsDoorLocked();
                 voltage = response.body().getVoltage();
                 OilChange = response.body().getDistance_to_oil_change();
+                fuelLevel = response.body().getFuel_level();
                 if (which ==0)
                 {
-                    mainMenu.getAllMainData(doorState, voltage, OilChange);
+                    mainMenu.getAllMainData(doorState, voltage, OilChange, fuelLevel);
                 }
 
 
