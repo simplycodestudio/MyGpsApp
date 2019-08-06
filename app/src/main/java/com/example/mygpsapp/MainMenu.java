@@ -96,7 +96,7 @@ public class MainMenu extends AppCompatActivity implements StartDialog.StartDial
         gasolineTv.setTypeface(myriad);
         doorLockTextView.setTypeface(myriad);
         textViewUsername.setTypeface(myriad);
-        gasolineTv.setText("23%");
+
     }
 
     public void listenery() {
@@ -172,6 +172,7 @@ public class MainMenu extends AppCompatActivity implements StartDialog.StartDial
         editor.putString("isDoorLocked", DoorState);
         editor.putString("voltage", Voltage);
         editor.putString("distanceToOilChange", OilChange);
+        editor.putString("fuel_level", FuelLevel);
         editor.apply();
 
     }
@@ -199,15 +200,23 @@ public class MainMenu extends AppCompatActivity implements StartDialog.StartDial
         String sharedlockstate = sharedPreferences.getString("isDoorLocked", "2");
         String sharedvoltage = sharedPreferences.getString("voltage", "0");
         String sharedOilChange = sharedPreferences.getString("distanceToOilChange", "10000");
+        String sharedFuelLevel = sharedPreferences.getString("fuel_level", "0");
+        int TankLevel = Integer.parseInt(sharedFuelLevel);
         int Lockstate = Integer.parseInt(sharedlockstate);
         Double VoltageState = Double.valueOf(sharedvoltage);
         int OilChange = Integer.parseInt(sharedOilChange);
+
+        TankState(TankLevel);
         DoorLockInfo(Lockstate);
         setVoltage(VoltageState);
         setDistanceToOilChange(OilChange);
 
     }
 
+    public void TankState(int level)
+    {
+        gasolineTv.setText(String.valueOf(level)+"%");
+    }
     public void DoorLockInfo(int status) {
 
         lockedDoorsImageview = findViewById(R.id.lockedDoorsImageView);
